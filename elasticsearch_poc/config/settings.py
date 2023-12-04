@@ -10,5 +10,9 @@ class ElasticSearchSettings(BaseSettings):
     password: str = "<your_strong_password>"
 
     @property
-    def http_url(self) -> str:
-        return f"http://{self.host}:{self.port}"
+    def https_url(self) -> str:
+        return f"https://{self.host}:{self.port}"
+
+    @property
+    def dev_http_ca_crt_path(self) -> str:
+        return "../dev_http_ca.crt"
